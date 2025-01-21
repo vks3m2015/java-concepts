@@ -35,7 +35,7 @@ public class ModifyingList {
 		Iterator<String> itr = list.iterator();
 		while(itr.hasNext()) {
 			
-			String str = itr.next();
+			String str1 = itr.next();
 			str = str + "singh";
 			
 			System.out.println(" str ="+ str);
