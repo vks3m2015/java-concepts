@@ -1,16 +1,13 @@
 package concepts;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ConcurrentModificationExceptionExample {
 
 	static void removeUsingItr(){
 		//List<String> list = List.of("Noida", "Gurugram", "Kanpur"); //it creates immutable list
-
-		List<String> list = new ArrayList<>();
-		list.add("One");
-		list.add("Two");
-		list.add("Three");
+		List<String> list = new ArrayList<>(List.of("One", "Two", "Three"));
 
 		System.out.println("List before removal : "+ list);
 		for(Iterator<String > itr = list.iterator(); itr.hasNext();  ){
@@ -24,7 +21,7 @@ public class ConcurrentModificationExceptionExample {
 	}
 
 	static void directStructuralModification(){
-		List<String> list = new ArrayList<>();
+		ArrayList<String> list = new ArrayList<>();
 		list.add("Noida");
 		list.add("Gurugram");
 		list.add("Kanpur");
@@ -34,9 +31,26 @@ public class ConcurrentModificationExceptionExample {
 
 			if (element.equals("Gurugram")) {
 				list.remove("Gurugram");
-				list.add("Gurgaon");
+				//list.add("Gurgaon");
 			}
 		}
+	}
+
+	static void directStructuralModificationAndExit(){
+		ArrayList<String> list = new ArrayList<>();
+		list.add("Noida");
+		list.add("Gurugram");
+		list.add("Kanpur");
+		//It will not throw ConcurrentModificationException by method next()
+		for (String element : list) {
+			System.out.println(" element = " + element);
+
+			if (element.equals("Gurugram")) {
+				list.remove("Gurugram");
+				break;
+			}
+		}
+		System.out.println("List after modification - "+ list);
 	}
 
 	static void noStructuralModification(){
@@ -54,20 +68,28 @@ public class ConcurrentModificationExceptionExample {
 			System.out.println(" element = "+ element);
 		}
 		System.out.println("list ="+list);
-
 	}
 
+	static void failSafe(){
+		ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
+		map.put(1, "One");
+		map.put(2, "Two");
+		map.put(3, "Three");
+
+		Iterator<Integer> iterator = map.keySet().iterator();
+
+		while (iterator.hasNext()) {
+			Integer key = iterator.next();
+			map.put(5, "Fifth");
+		}
+		System.out.println(" ConcurrentHashMap after modification - "+ map);
+	}
 	public static void main(String[] args) {
-		//removeUsingItr();
+		removeUsingItr();
 		//directStructuralModification();
-		noStructuralModification();
-
-		Map<Integer, String> map = new HashMap<>();
-		map.put(1, "Noida");
-		map.put(2, "Gurugram");
-		map.put(3, "Kanpur");
-		
-
+		//noStructuralModification();
+		//directStructuralModificationAndExit();
+		failSafe();
 	}
 
 }
