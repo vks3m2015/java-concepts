@@ -13,7 +13,8 @@ public interface A {
 		System.out.println(" default method of interface A");
 	}
 	
-	//Illegal combination of modifiers for the interface method m2; only one of abstract, default, or static permitted
+	//Illegal combination of modifiers for the interface method m2; 
+	// only one of abstract, default, or static permitted
 	//static default void m2() {}
 
 }

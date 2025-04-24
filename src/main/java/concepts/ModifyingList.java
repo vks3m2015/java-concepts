@@ -44,7 +44,9 @@ public class ModifyingList {
 		}
 		
 		System.out.println("list = " + list);
-		List <String> output = list.stream().map((element) -> element + "singh" ).collect(Collectors.toList());
+		List <String> output = list.stream()
+				.map((element) -> element + "singh" )
+				.collect(Collectors.toList());
 		
 		//System.out.println(list);
 		System.out.println(output);

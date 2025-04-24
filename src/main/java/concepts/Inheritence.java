@@ -35,6 +35,8 @@ class Inheritence {
 		 child.commonMethod();
 		 child.methodInParentOnly();
 		 child.methodInChildOnly();
+
+		 Child.staticMethodInParent();
 		
 	}
 
@@ -46,11 +48,15 @@ class Parent{
 	String varInParentOnly = " This variable is in Parent Class Only";
 	
 	public void commonMethod(){
-		System.out.println("Class: Parent , Methdo: commonMethod.... str ="+commonVar);	
+		System.out.println("Class: Parent , Methdo: commonMethod.... str ="+commonVar);
 	}
 	
 	public void methodInParentOnly(){
 		System.out.println(" Class: Parent , Methdo: methodInParentOnly....");
+	}
+
+	public static void staticMethodInParent(){
+		System.out.println("Static method in Parent");
 	}
 }
 

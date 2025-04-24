@@ -20,10 +20,10 @@ public class ImmutableObj {
 		//System.out.println(bill);
 		
 		items.add("jeans");
-		System.out.println(bill);
+		System.out.println("bill1........" +bill);
 		
-		bill.getItems().add("jeans");
-		System.out.println(bill);
+		bill.getItems().add("jeans2");
+		System.out.println("bill2............" + bill);
 
 	}
 
@@ -40,9 +40,9 @@ final class Bill{
 		super();
 		this.amount = amount;
 		//Wrong
-		//this.items = Collections.unmodifiableList(items);
+		this.items = Collections.unmodifiableList(items);
 		
-		this.items = items.stream().collect(Collectors.toList());
+		//this.items = new ArrayList<>(items);
 	}
 	
 	public int getAmount() {
