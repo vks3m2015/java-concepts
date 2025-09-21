@@ -1,4 +1,4 @@
-package concepts;
+package concepts.exception;
 
 public class ExceptionQues {
 

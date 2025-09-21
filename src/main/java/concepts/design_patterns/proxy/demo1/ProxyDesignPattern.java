@@ -1,4 +1,4 @@
-package concepts.design_patterns;
+package concepts.design_patterns.proxy.demo1;
 
 //Structural Design Pattern
 //to control the access of actual object

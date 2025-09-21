@@ -1,4 +1,4 @@
-package concepts;
+package concepts.oops;
 
 public class NULLInMethodOverload {
 
@@ -15,14 +15,12 @@ public class NULLInMethodOverload {
 		System.out.println(" Object Argument");
 	}
 	
-	public static int method(int in)
-	{
+	public static int method(int in) {
 		System.out.println(" integer argument");
 		return 1;
 	}
 	
-	public static String method2(int in)
-	{
+	public static String method2(int in) {
 		System.out.println(" integer argument String return type");
 		return "";
 	}

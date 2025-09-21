@@ -1,4 +1,4 @@
-package concepts;
+package concepts.oops;
 
 
 //A subclass inherits all the members (fields, methods, and nested classes) from its superclass. 
@@ -17,8 +17,10 @@ class Inheritence {
 		 //ERROR - varInChildOnly cannot be resolved or is not a field
 		// String varInChildOnly = pc.varInChildOnly;
 		 
-		 pc.commonMethod();                     //method overriding
-		 pc.methodInParentOnly();
+		// pc.commonMethod();                     //method overriding
+		 //pc.methodInParentOnly();
+
+         pc.commonStaticMethod();
 		
 		 //ERROR - The method methodInChildOnly() is undefined for the type Parent
 		 
@@ -29,14 +31,14 @@ class Inheritence {
 		  */
 		 //pc.methodInChildOnly();
 		 
-		 System.out.println("=========== ref Type Child ================");
+		/* System.out.println("=========== ref Type Child ================");
 		 
 		 Child child = new Child();
 		 child.commonMethod();
 		 child.methodInParentOnly();
-		 child.methodInChildOnly();
+		 child.methodInChildOnly();*/
 
-		 Child.staticMethodInParent();
+		// Child.staticMethodInParent();
 		
 	}
 
@@ -50,6 +52,10 @@ class Parent{
 	public void commonMethod(){
 		System.out.println("Class: Parent , Methdo: commonMethod.... str ="+commonVar);
 	}
+
+    public static void commonStaticMethod(){
+        System.out.println("Static method - Class: Parent , Method: commonStaticMethod....");
+    }
 	
 	public void methodInParentOnly(){
 		System.out.println(" Class: Parent , Methdo: methodInParentOnly....");
@@ -69,6 +75,10 @@ class Child extends Parent{
 	public void commonMethod(){
 		System.out.println(" Class: Child , Methdo: commonMethod....  str ="+str);	
 	}
+
+    public static void commonStaticMethod(){
+        System.out.println("Static method - Class: Child , Method: commonStaticMethod....");
+    }
 	
 	public void methodInChildOnly(){
 		System.out.println(" Class: Child , Methdo: methodInChildOnly....");

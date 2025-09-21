@@ -1,4 +1,4 @@
-package concepts;
+package concepts.oops;
 
 public class Overloading {
 
@@ -19,7 +19,7 @@ public class Overloading {
 	
 	public static void main(String[] args) {
 		
-		method(null);
+		method(null);   //string method will be called
 
 	}
 

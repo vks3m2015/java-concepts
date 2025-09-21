@@ -1,4 +1,4 @@
-package concepts.design_patterns;
+package concepts.design_patterns.singleton;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -60,8 +60,8 @@ public class SingletonTest{
 	
 	public static void main(String[] args)throws Exception{
 		
-		//testCloneProof();
-		testReflectionProof();
+		testCloneProof();
+		//testReflectionProof();
 		//testSerializationProof();
 	}
 	
