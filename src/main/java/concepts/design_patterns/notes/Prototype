@@ -1,0 +1,5 @@
+
+This pattern is particularly useful when object creation is expensive or complex,
+or when you need to create objects that are variations of existing ones
+
+Prototype pattern also lets us create copies of objects without depending on the concrete classes.
