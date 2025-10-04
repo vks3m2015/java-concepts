@@ -1,0 +1,2 @@
+Potential for memory leaks: While you can have many ThreadLocals, it's crucial to manage their lifecycle. If ThreadLocal objects are not properly removed (using remove()) when no longer needed, especially in scenarios with thread pools, they can lead to memory leaks as the thread-local values might persist even after the logical "use" of the thread is complete.
+
