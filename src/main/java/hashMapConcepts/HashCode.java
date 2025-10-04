@@ -14,8 +14,8 @@ package hashMapConcepts;
  */
 public class HashCode {
 
-	public static void main(String[] arg)
-	{
+	public static void main(String[] arg) {
+
 		Employee emp1 = new Employee("vikas", 10000);
 		Employee emp2 = new Employee("vikas", 10000);
 		Employee emp3 = new Employee("ut", 20000);

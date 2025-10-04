@@ -5,7 +5,8 @@ import java.util.HashMap;
 
 
 
-/* if hash code of key object changes after we have put a key-value pair in map, then its almost impossible to fetch the value object back from map. 
+/* if hash code of key object changes after we have put a key-value pair in map,
+   then its almost impossible to fetch the value object back from map.
  * It is a case of memory leak. To avoid this, map keys should be IMMUTABLE
  * 
  *  
@@ -13,7 +14,8 @@ import java.util.HashMap;
  * then you have to make sure that state change for key object does not change the hash code of object. 
  * This can be done by overriding the hashCode() method.
  *
- * hashCode() implementation of Object class is independent of object state change. If a class has not overridden hashCode() and equals() method 
+ * hashCode() implementation of Object class is independent of object state change.
+    If a class has not overridden hashCode() and equals() method
  *  then hashCode() method of object class will be called and it will return same hashCode even after change in object state.
     but not overriding these method will cause other adverse impact.
     here if Employee class doesn't override hashCode() and equals(), storing and retrieval will work correctly 

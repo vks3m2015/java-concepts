@@ -1,6 +1,5 @@
 package design_patterns.strategy.demo1;
 
-import concepts.design_patterns.strategy.demo1.PayStrategy;
 
 /**
  * Order class. Doesn't know the concrete payment method (strategy) user has

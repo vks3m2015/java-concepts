@@ -1,9 +1,6 @@
 package design_patterns.facade.demo1;
 
-import concepts.design_patterns.facade.demo1.Codec;
-import concepts.design_patterns.facade.demo1.MPEG4CompressionCodec;
-import concepts.design_patterns.facade.demo1.OggCompressionCodec;
-import concepts.design_patterns.facade.demo1.VideoFile;
+
 
 public class CodecFactory {
 

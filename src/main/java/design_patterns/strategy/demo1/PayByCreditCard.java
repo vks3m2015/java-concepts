@@ -1,7 +1,5 @@
 package design_patterns.strategy.demo1;
 
-import concepts.design_patterns.strategy.demo1.CreditCard;
-import concepts.design_patterns.strategy.demo1.PayStrategy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class PayByCreditCard implements PayStrategy {
     private final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
-    private concepts.design_patterns.strategy.demo1.CreditCard card;
+    private CreditCard card;
 
     /**
      * Collect credit card data.

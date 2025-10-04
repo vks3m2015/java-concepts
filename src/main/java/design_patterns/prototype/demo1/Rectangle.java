@@ -1,8 +1,7 @@
 package design_patterns.prototype.demo1;
 
-import concepts.design_patterns.prototype.demo1.Shape;
 
-public class Rectangle extends concepts.design_patterns.prototype.demo1.Shape {
+public class Rectangle extends Shape {
     public int width;
     public int height;
 

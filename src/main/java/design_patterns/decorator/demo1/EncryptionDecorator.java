@@ -1,7 +1,5 @@
 package design_patterns.decorator.demo1;
 
-import concepts.design_patterns.decorator.demo1.DataSource;
-import concepts.design_patterns.decorator.demo1.DataSourceDecorator;
 
 import java.util.Base64;
 

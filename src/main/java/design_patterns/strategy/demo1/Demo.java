@@ -1,9 +1,5 @@
 package design_patterns.strategy.demo1;
 
-import concepts.design_patterns.strategy.demo1.Order;
-import concepts.design_patterns.strategy.demo1.PayByCreditCard;
-import concepts.design_patterns.strategy.demo1.PayByPayPal;
-import concepts.design_patterns.strategy.demo1.PayStrategy;
 
 import java.io.BufferedReader;
 import java.io.IOException;

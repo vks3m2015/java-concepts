@@ -11,68 +11,55 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class SortByValues {
-  public static void main(String[] args) {
-      HashMap<Integer, String> hmap = new HashMap<Integer, String>();
-      hmap.put(5, "A");
-      hmap.put(11, "C");
-      hmap.put(4, "Z");
-      hmap.put(77, "Y");
-      hmap.put(9, "P");
-      hmap.put(66, "Q");
-      hmap.put(0, "R");
-      
-      
-      System.out.println("Before Sorting:");
-      
-      Set<Map.Entry<Integer, String>> set = hmap.entrySet();
-      Iterator<Map.Entry<Integer, String>> iterator = set.iterator();
-      
-      while(iterator.hasNext()) 
-      {
-           Map.Entry<Integer, String> me = iterator.next();
-           System.out.print(me.getKey() + ": ");
-           System.out.println(me.getValue());
-      }
-      
-      
-      Map<Integer, String> map = sortByValues(hmap); 
-      
-      System.out.println("After Sorting:");
-      
-      Set<Map.Entry<Integer, String>> set2 = map.entrySet();
-      Iterator<Map.Entry<Integer, String>> iterator2 = set2.iterator();
-      
-      while(iterator2.hasNext()) 
-      {
-           Map.Entry<Integer, String> me2 = iterator2.next();
-           System.out.print(me2.getKey() + ": ");
-           System.out.println(me2.getValue());
-      }
-  }
 
-  private static HashMap<Integer, String> sortByValues(HashMap<Integer, String> map) 
-  { 
-	  
-       List<Map.Entry<Integer, String>> list = new LinkedList<Map.Entry<Integer, String>>(map.entrySet());
-       
-       // Defined Custom Comparator here
-       Collections.sort(list, new Comparator<Map.Entry<Integer, String>>() 
-       {
-    	   
+    static HashMap<Integer, String> hmap = new HashMap<Integer, String>();
+
+    static {
+        hmap.put(5, "A");
+        hmap.put(11, "C");
+        hmap.put(4, "Z");
+        hmap.put(77, "Y");
+        hmap.put(9, "P");
+        hmap.put(66, "Q");
+        hmap.put(0, "R");
+    }
+
+    public static void main(String[] args) {
+        sortByValues();
+        usingStream();
+    }
+
+    static void usingStream() {
+        Map<Integer, String> map = hmap.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey,
+                        Map.Entry::getValue, (key1, key2) -> key1, LinkedHashMap::new));
+        System.out.println(" sorted map using stream => "+ map);
+    }
+
+    static HashMap<Integer, String> sortByValues() {
+
+        //Convert Set to List
+        List<Map.Entry<Integer, String>> list = new LinkedList<Map.Entry<Integer, String>>(hmap.entrySet());
+
+        // Defined Custom Comparator here
+        Collections.sort(list, new Comparator<Map.Entry<Integer, String>>() {
             public int compare(Map.Entry<Integer, String> o1, Map.Entry<Integer, String> o2) {
-               return (o1.getValue()).compareTo(o2.getValue());
+                return (o1.getValue()).compareTo(o2.getValue());
             }
-       });
+        });
 
-       // Here I am copying the sorted list in HashMap
-       // using LinkedHashMap to preserve the insertion order
-       HashMap<Integer, String> sortedHashMap = new LinkedHashMap<Integer, String>();
-       for (Iterator<Map.Entry<Integer, String>> it = list.iterator(); it.hasNext();) {
-              Map.Entry<Integer, String> entry = it.next();
-              sortedHashMap.put(entry.getKey(), entry.getValue());
-       } 
-       return sortedHashMap;
-  }
+        // Here I am copying the sorted list in HashMap
+        // using LinkedHashMap to preserve the insertion order
+        HashMap<Integer, String> sortedHashMap = new LinkedHashMap<Integer, String>();
+        for (Iterator<Map.Entry<Integer, String>> it = list.iterator(); it.hasNext(); ) {
+            Map.Entry<Integer, String> entry = it.next();
+            sortedHashMap.put(entry.getKey(), entry.getValue());
+        }
+        System.out.println(" Sorted HashMap => " + sortedHashMap);
+        return sortedHashMap;
+    }
 }

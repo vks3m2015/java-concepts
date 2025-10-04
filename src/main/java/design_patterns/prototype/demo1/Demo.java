@@ -1,9 +1,5 @@
 package design_patterns.prototype.demo1;
 
-import concepts.design_patterns.prototype.demo1.Circle;
-import concepts.design_patterns.prototype.demo1.Rectangle;
-import concepts.design_patterns.prototype.demo1.Shape;
-
 import java.util.ArrayList;
 import java.util.List;
 

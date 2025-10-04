@@ -1,14 +1,12 @@
 package design_patterns.prototype.demo1;
 
-import concepts.design_patterns.prototype.demo1.BundledShapeCache;
-import concepts.design_patterns.prototype.demo1.Shape;
 
 public class CacheDemo {
     public static void main(String[] args) {
         BundledShapeCache cache = new BundledShapeCache();
 
-        concepts.design_patterns.prototype.demo1.Shape shape1 = cache.get("Big green circle");
-        concepts.design_patterns.prototype.demo1.Shape shape2 = cache.get("Medium blue rectangle");
+       Shape shape1 = cache.get("Big green circle");
+       Shape shape2 = cache.get("Medium blue rectangle");
         Shape shape3 = cache.get("Medium blue rectangle");
 
         if (shape1 != shape2 && !shape1.equals(shape2)) {

@@ -1,9 +1,8 @@
 package design_patterns.decorator.demo1;
 
-import concepts.design_patterns.decorator.demo1.DataSource;
 
-public abstract class DataSourceDecorator implements concepts.design_patterns.decorator.demo1.DataSource {
-    private concepts.design_patterns.decorator.demo1.DataSource wrapper;
+public abstract class DataSourceDecorator implements DataSource {
+    private DataSource wrapper;
 
     DataSourceDecorator(DataSource source) {
         this.wrapper = source;

@@ -1,6 +1,5 @@
 package design_patterns.observer.demo1;
 
-import concepts.design_patterns.observer.demo1.EventManager;
 
 import java.io.File;
 

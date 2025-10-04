@@ -2,7 +2,7 @@ package java_basic;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import concepts.models.Address;
+import models.Address;
 
 public class CloneUtils {
 

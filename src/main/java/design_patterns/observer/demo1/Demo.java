@@ -1,8 +1,5 @@
 package design_patterns.observer.demo1;
 
-import concepts.design_patterns.observer.demo1.Editor;
-import concepts.design_patterns.observer.demo1.EmailNotificationListener;
-import concepts.design_patterns.observer.demo1.LogOpenListener;
 
 public class Demo {
     public static void main(String[] args) {
