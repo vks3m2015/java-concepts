@@ -1,0 +1,32 @@
+
+
+Collectors
+-----------------
+Collector Collectors.mapping(Function mapper, Collector downstream)
+Collector Collectors.collectingAndThen(Collector downstream, Function finisher)
+Optional  Collectors.maxBy(Comparator comparator)
+
+Collector Collectors.counting()
+Collector Collectors.joining()
+
+
+Collector Collectors.summingInt(ToIntFunction mapper)
+Collector Collectors.summingLong(ToLongFunction mapper)
+Collector Collectors.summingDouble(ToDoubleFunction mapper)
+
+Collector Collectors.groupingBy(Function classifier, Collector downstream)
+Collector Collectors.toMap(Function keyMapper, Function valueMapper)
+
+Comparator
+-----------------------
+Comparator Comparator.comparing(Function keyExtractor)
+Comparator Comparator.comparing( Employee :: getSalary).thenComparing(Employee :: getName)
+Comparator Comparator.comparingInt(ToIntFunction keyExtractor)
+Comparator Comparator.comparingDouble(Employee::getSalary)
+
+Comparator Comparator.reverseOrder()
+
+Comparator Collections.reverseOrder()
+
+
+Map.Entry.<Double, List<Employee>>comparingByKey().reversed()

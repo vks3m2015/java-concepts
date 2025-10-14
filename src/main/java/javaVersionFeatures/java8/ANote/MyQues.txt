@@ -1,0 +1,11 @@
+Can we create Stream of primitive elements using Stream.of() ??
+    You cannot directly create a Stream of primitive elements using Stream.of()
+
+    int[] numbers = {1, 2, 3, 4, 5};
+    Stream<int[]> stream = Stream.of(numbers);
+
+    //Correct way
+    int[] arr = {1, 2, 3, 4, 5};
+    IntStream intStream = Arrays.stream(arr);
+    intStream.forEach(System.out::println);
+
