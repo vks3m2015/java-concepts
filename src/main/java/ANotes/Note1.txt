@@ -1,0 +1,4 @@
+What is the Integer Cache?
+The Integer cache is a mechanism in Java that reuses Integer objects for values in a specific range instead of creating new ones every time.
+
+That range is: -128 to +127

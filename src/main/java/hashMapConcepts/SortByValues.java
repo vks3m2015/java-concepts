@@ -45,15 +45,13 @@ public class SortByValues {
         //Convert Set to List
         List<Map.Entry<Integer, String>> list = new LinkedList<Map.Entry<Integer, String>>(hmap.entrySet());
 
-        // Defined Custom Comparator here
         Collections.sort(list, new Comparator<Map.Entry<Integer, String>>() {
             public int compare(Map.Entry<Integer, String> o1, Map.Entry<Integer, String> o2) {
                 return (o1.getValue()).compareTo(o2.getValue());
             }
         });
 
-        // Here I am copying the sorted list in HashMap
-        // using LinkedHashMap to preserve the insertion order
+        //copying the sorted list in LinkedHashMap to preserve the insertion order
         HashMap<Integer, String> sortedHashMap = new LinkedHashMap<Integer, String>();
         for (Iterator<Map.Entry<Integer, String>> it = list.iterator(); it.hasNext(); ) {
             Map.Entry<Integer, String> entry = it.next();

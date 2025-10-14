@@ -13,6 +13,7 @@ public class Test {
 	{
 		
 		LinkedList<String> ll = new LinkedList<String>();
+        ConcurrentHashMap<String, String> hm = new ConcurrentHashMap<>();
 		/*ConcurrentHashMap<String, String> hm = new ConcurrentHashMap<String, String>();
 		hm.put("name", "vikas");
 		hm.put("company", "aricent");
