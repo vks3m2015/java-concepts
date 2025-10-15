@@ -1,0 +1,8 @@
+- Diff b/w thenApply() and thenApplyAsync()
+https://www.baeldung.com/java-completablefuture-thenapply-thenapplyasync
+
+
+can we declare long type as volatile java?
+  Yes, you can declare a long type as volatile in Java.
+  Ensuring Atomicity for 64-bit Types : On some platforms, particularly 32-bit architectures, writing to a 64-bit long or double variable might not be an atomic operation. It could involve two separate 32-bit writes, potentially leading to "word tearing" where a thread reads a value that's a mix of an old and new value if another thread modifies it concurrently. Making the long volatile guarantees that reads and writes to it are atomic, preventing this issue
+  Guaranteeing Visibility and Preventing Reordering: The volatile keyword ensures that changes to the long variable are immediately visible to all threads. This means that when one thread writes to a volatile long, other threads are guaranteed to see the updated value the next time they read it. Additionally, volatile prevents the compiler and runtime from reordering memory operations around the volatile variable, ensuring a consistent order of operations in multithreaded environments.

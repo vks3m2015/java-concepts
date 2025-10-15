@@ -16,8 +16,7 @@ public class Test3 {
 			System.out.println("inside try...");
 			int i = 10/0;
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			return "catch";
 		}
 		finally {
@@ -84,8 +83,7 @@ public class Test3 {
 	}*/
 	
 	//WILL COMPILE but will throw exception at runtime
-	public static void throwException4()
-	{
+	public static void throwException4() {
 	  	try {
 			
 	  		System.out.println("inside throwException1 .......");
@@ -96,10 +94,4 @@ public class Test3 {
  			throw new NullPointerException();
 		}
 	}
-	
-	
 }
-
-
-
-

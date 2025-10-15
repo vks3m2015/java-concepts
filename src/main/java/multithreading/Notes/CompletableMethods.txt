@@ -1,0 +1,51 @@
+1. Creation Methods:
+
+runAsync(Runnable runnable) / runAsync(Runnable runnable, Executor executor): Executes a Runnable asynchronously without returning a result.
+
+supplyAsync(Supplier<T> supplier) / supplyAsync(Supplier<T> supplier, Executor executor): Executes a Supplier asynchronously and returns a CompletableFuture containing the result.
+
+completedFuture(T value): Returns a CompletableFuture that is already completed with the given value.
+
+2. Chaining and Transformation Methods:
+
+thenApply(Function<T, U> fn) / thenApplyAsync(Function<T, U> fn): Applies a Function to the result of the current CompletableFuture when it completes normally, returning a new CompletableFuture with the transformed result. thenApplyAsync runs the function in a separate thread
+
+thenAccept(Consumer<T> action) / thenAcceptAsync(Consumer<T> action): Consumes the result of the current CompletableFuture when it completes normally, without returning a result.
+
+thenRun(Runnable action) / thenRunAsync(Runnable action): Executes a Runnable when the current CompletableFuture completes normally, without using its result or returning a new result.
+
+thenCompose(Function<T, CompletionStage<U>> fn) / thenComposeAsync(Function<T, CompletionStage<U>> fn): Allows chaining of CompletableFutures where the next stage depends on the result of the previous stage, returning a new CompletableFuture that will be completed with the result of the composed future.
+
+thenCombine(CompletionStage<? extends U> other, BiFunction<? super T, ? super U, ? extends V> fn) / thenCombineAsync(...): Combines the results of two CompletableFutures using a BiFunction when both complete normally.
+
+3. Exception Handling Methods:
+
+exceptionally(Function<Throwable, ? extends T> fn): Returns a new CompletableFuture that, if the current one completes exceptionally, applies the given Function to the exception to recover and complete normally.
+
+handle(BiFunction<? super T, Throwable, ? extends U> fn) / handleAsync(...): Handles both normal completion and exceptional completion. The BiFunction receives the result (if normal) and the exception (if exceptional), allowing for recovery or transformation.
+
+whenComplete(BiConsumer<? super T, ? super Throwable> action) / whenCompleteAsync(...): Performs an action when the CompletableFuture completes, whether normally or exceptionally, without modifying the result.
+
+4. Combination Methods:
+
+allOf(CompletableFuture<?>... cfs): Returns a new CompletableFuture that completes when all of the given CompletableFutures complete.
+
+anyOf(CompletableFuture<?>... cfs): Returns a new CompletableFuture that completes when any of the given CompletableFutures complete, with the same result or exception.
+
+5. Completion and Inspection Methods:
+
+get() / get(long timeout, TimeUnit unit): Blocks and waits for the CompletableFuture to complete and returns its result. Throws ExecutionException if completed exceptionally.
+
+join(): Similar to get(), but throws an unchecked CompletionException if completed exceptionally.
+
+complete(T value): Attempts to complete the CompletableFuture with the given value. Returns true if successful, false otherwise (e.g., if already completed).
+
+completeExceptionally(Throwable ex): Attempts to complete the CompletableFuture exceptionally with the given exception.
+
+isDone(): Returns true if the CompletableFuture is completed in any way (normally, exceptionally, or cancelled).
+
+isCompletedExceptionally(): Returns true if the CompletableFuture completed exceptionally.
+
+isCancelled(): Returns true if the CompletableFuture was cancelled.
+
+cancel(boolean mayInterruptIfRunning): Attempts to cancel the execution of the CompletableFuture.
