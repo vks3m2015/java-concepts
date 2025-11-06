@@ -1,4 +1,4 @@
-package practice;
+package Apractice;
 
 class Test2 {
 	

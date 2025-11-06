@@ -1,4 +1,4 @@
-package java8.streams.programs;
+package javaVersionFeatures.java8.streams.programs;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,7 +14,8 @@ public class SecondMaxSalPerDepartment {
                 new Employee("Eve", "HR", 70000),
                 new Employee("Frank", "HR", 75000),
                 new Employee("Grace", "Finance", 80000),
-                new Employee("Heidi", "Finance", 78000)
+                new Employee("Heidi", "Finance", 78000),
+                new Employee("Alex", "Finance", 80000)
         );
 
         Map<String, Optional<Employee>> secondHighestByDept = employees.stream()
@@ -35,6 +36,29 @@ public class SecondMaxSalPerDepartment {
                 System.out.println(dept + " → " + emp.orElse(null))
         );
 
+       //------------------------ remove duplicate salary
+
+        Map<String, Optional<Double>> secondMaxPerDept =
+                employees.stream().collect(Collectors.groupingBy(
+                        Employee::getDepartment,
+                        Collectors.collectingAndThen(
+                                Collectors.mapping(Employee::getSalary, Collectors.toSet()),//Remove duplicate
+
+                                salList -> salList.stream()
+                                        .sorted(Comparator.reverseOrder())
+                                        .skip(1)
+                                        .findFirst()
+
+                        )
+                ));
+
+        secondMaxPerDept.forEach((dept, sal) ->
+                System.out.println(dept + " → " + sal.orElse(null))
+        );
+
+        //-------------------------------------
+
+
 
         //Get only salary not Employee
         Map<String, OptionalDouble> secondMaxSalary = employees.stream()
@@ -49,6 +73,7 @@ public class SecondMaxSalPerDepartment {
                                         .findFirst()
                         )
                 ));
+
 
     }
 

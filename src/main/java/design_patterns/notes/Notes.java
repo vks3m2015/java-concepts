@@ -16,16 +16,19 @@ Builder Pattern
 
 2. Structural Design Pattern
 
--Facade Pattern
-    https://refactoring.guru/design-patterns/facade
-
-Proxy Pattern
-Flyweight Pattern
-
-Decorator Pattern
 Adapter Pattern
 Bridge Pattern
 Composite Pattern
+Decorator Pattern
+-Facade Pattern
+    https://refactoring.guru/design-patterns/facade
+Flyweight Pattern
+Proxy Pattern
+
+
+
+
+
 
 
 
