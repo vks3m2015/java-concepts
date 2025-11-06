@@ -1,4 +1,4 @@
-package java8.streams.programs;
+package javaVersionFeatures.java8.streams.programs;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +36,11 @@ public class MostRepeatedWord {
 
        // wordCount.forEach((word, count) -> System.out.println(word + " → " + count));
 
-        long maxCount = wordCount.values().stream().mapToLong(Long::longValue).max().orElse(0);
+        long maxCount = wordCount.values()
+                .stream()
+                .mapToLong(Long::longValue)
+                .max()
+                .orElse(0);
 
         List<String> mostFrequentWords = wordCount.entrySet().stream()
                 .filter(e -> e.getValue() == maxCount)

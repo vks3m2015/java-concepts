@@ -11,6 +11,8 @@ public enum EnumSingleton {
 
     private String configuration;
 
+    //EnumSingleton(String str) {}
+
     // Private constructor to initialize any necessary data
     private EnumSingleton() {
         // This constructor is called only once when INSTANCE is initialized

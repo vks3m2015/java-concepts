@@ -1,4 +1,4 @@
-package java8.streams.programs;
+package javaVersionFeatures.java8.streams.programs;
 
 import java.util.Comparator;
 import java.util.List;

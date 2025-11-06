@@ -2,3 +2,8 @@ What is the Integer Cache?
 The Integer cache is a mechanism in Java that reuses Integer objects for values in a specific range instead of creating new ones every time.
 
 That range is: -128 to +127
+
+
+how comparison is done for (int == Integer) java?
+  The Integer object is automatically unboxed by the Java Virtual Machine (JVM) into its corresponding primitive int value. This means the Integer object's intValue() method is implicitly called to extract the primitive int.
+  After unboxing, the comparison becomes a simple primitive int == int comparison. The == operator then compares the numerical values of the two primitive ints.

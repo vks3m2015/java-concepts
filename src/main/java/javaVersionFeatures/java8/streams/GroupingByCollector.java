@@ -39,7 +39,8 @@ public class GroupingByCollector {
 		// The following will classify Person objects by state and city,cascading two
 		// Collectors together:
 		Map<String, Map<String, List<Employee>>> peopleByStateAndCity = empList.stream()
-				.collect(Collectors.groupingBy(emp -> emp.state, Collectors.groupingBy(emp -> emp.city)));
+				.collect(Collectors.groupingBy(emp -> emp.state,
+                        Collectors.groupingBy(emp -> emp.city)));
 
 		System.out.println(" peopleByStateAndCity = " + peopleByStateAndCity);
 
