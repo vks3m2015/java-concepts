@@ -4,7 +4,7 @@ package design_patterns.behavioural.observer.demo1;
 import java.io.File;
 
 public class EmailNotificationListener implements EventListener {
-    private String email;
+    private final String email;
 
     public EmailNotificationListener(String email) {
         this.email = email;
